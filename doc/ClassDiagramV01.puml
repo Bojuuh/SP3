@@ -84,9 +84,7 @@ SeriesList --|> MediaList
 FinishedList --|> MediaList
 
 Main *-- StreamingService
-User --* StreamingService
-StreamingService *-- MediaList
-Media --* MediaList
+
 
 StreamingService *-- TextUI
 StreamingService *-- FileIO
