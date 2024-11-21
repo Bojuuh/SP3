@@ -72,21 +72,17 @@ class Series{
 
 }
 
+Media <|-- Movie
+Media <|-- Series
 
-Movie --|> Media
-Series --|> Media
 StreamingService *-- Media
 
 
-WatchList --|> List
-MovieList --|> List
-SeriesList --|> List
-FinishedList --|> List
 
 Main *-- StreamingService
-User --* StreamingService
+StreamingService *-- User
 StreamingService *-- List
-Media --* List
+List *-- Media
 
 StreamingService *-- TextUI
 StreamingService *-- FileIO
