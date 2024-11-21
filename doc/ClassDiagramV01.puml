@@ -14,7 +14,7 @@ class Main{
 
 class StreamingService{
 
-
++ void searchbar()
 
 }
 
@@ -82,7 +82,6 @@ FinishedMedia --|> List
 Main *-- StreamingService
 User --* StreamingService
 StreamingService *-- List
-StreamingService *-- SearchBar
 Media --* List
 
 Media *-- SearchBar
