@@ -1,0 +1,68 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+!pragma layout smetana
+
+class User{
+- login
++ void createUser()
+}
+
+class StreamingService{
+
++ static void main(String[] args)
+}
+
+class MainMenu{
+
+}
+
+class List{
+
+}
+
+
+class Media{
+
++ releaseYear
++ rating
+
+}
+
+class Genres{
+
+
+
+}
+
+class Series{
+
++ seasons
++ episodes
+
+}
+
+
+Movie --|> Media
+Series --|> Media
+
+Media *-- Genres
+Crime --|> Genres
+War --|> Genres
+Drama --|> Genres
+Family --|> Genres
+Romance --|> Genres
+SciFi --|> Genres
+
+WatchList --|> List
+MovieList --|> List
+SeriesList --|> List
+FinishedMedia --|> List
+
+StreamingService *-- User
+User *-- MainMenu
+MainMenu *-- List
+MainMenu *-- SearchBar
+Media --* List
+
+Media *-- SearchBar
+@enduml
