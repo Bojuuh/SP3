@@ -3,8 +3,10 @@
 !pragma layout smetana
 
 class User{
-- login
+- String username
+- String password
 + void createUser()
++ void loginUser()
 }
 
 class Main{
@@ -15,6 +17,14 @@ class Main{
 class StreamingService{
 
 + void searchbar()
+- TextUI ui
+- FileIO io
++ void displayMain()
++ void displayGenre(String genre)
++ void displayList()
++ void displayMedia()
+
+
 
 }
 
@@ -22,7 +32,6 @@ class List{
 
 - ArrayList
 + addMedia()
-+ displayList()
 + removeMedia()
 
 
@@ -40,6 +49,7 @@ class TextUI{
 + void displayMsg()
 + int promptNumeric()
 + String promptText()
++ boolean promptBinary(String msg)
 
 }
 }
@@ -50,7 +60,7 @@ class Media{
 - float rating
 - String name
 - String genre
-+ void displayMedia()
+
 
 
 }
@@ -65,7 +75,7 @@ class Series{
 
 Movie --|> Media
 Series --|> Media
-
+StreamingService *-- Media
 
 
 WatchList --|> List
