@@ -7,37 +7,64 @@ class User{
 + void createUser()
 }
 
-class StreamingService{
+class Main{
 
 + static void main(String[] args)
 }
 
-class MainMenu{
+class StreamingService{
+
+
 
 }
 
 class List{
 
+- ArrayList
++ addMedia()
++ displayList()
++ removeMedia()
+
+
 }
 
+package "util" {
+
+class FileIO{
++ void readUserData()
++ void saveData()
+
+}
+class TextUI{
+- Scanner scanner
++ void displayMsg()
++ int promptNumeric()
++ String promptText()
+
+}
+}
 
 class Media{
 
-+ releaseYear
-+ rating
+- int releaseYear
+- float rating
+- String name
+- String Genre
++ void displayMedia()
+
 
 }
 
 class Genres{
-
+- ArrayList
 
 
 }
 
 class Series{
 
-+ seasons
-+ episodes
+- seasons
+- episodes
 
 }
 
@@ -45,24 +72,20 @@ class Series{
 Movie --|> Media
 Series --|> Media
 
-Media *-- Genres
-Crime --|> Genres
-War --|> Genres
-Drama --|> Genres
-Family --|> Genres
-Romance --|> Genres
-SciFi --|> Genres
+
 
 WatchList --|> List
 MovieList --|> List
 SeriesList --|> List
 FinishedMedia --|> List
 
-StreamingService *-- User
-User *-- MainMenu
-MainMenu *-- List
-MainMenu *-- SearchBar
+Main *-- StreamingService
+User --* StreamingService
+StreamingService *-- List
+StreamingService *-- SearchBar
 Media --* List
 
 Media *-- SearchBar
+StreamingService *-- TextUI
+StreamingService *-- FileIO
 @enduml
