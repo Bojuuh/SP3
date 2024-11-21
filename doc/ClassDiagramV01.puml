@@ -49,14 +49,8 @@ class Media{
 - int releaseYear
 - float rating
 - String name
-- String Genre
+- String genre
 + void displayMedia()
-
-
-}
-
-class Genres{
-- ArrayList
 
 
 }
@@ -77,14 +71,13 @@ Series --|> Media
 WatchList --|> List
 MovieList --|> List
 SeriesList --|> List
-FinishedMedia --|> List
+FinishedList --|> List
 
 Main *-- StreamingService
 User --* StreamingService
 StreamingService *-- List
 Media --* List
 
-Media *-- SearchBar
 StreamingService *-- TextUI
 StreamingService *-- FileIO
 @enduml
