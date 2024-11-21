@@ -28,7 +28,7 @@ class StreamingService{
 
 }
 
-class List{
+class MediaList{
 
 - ArrayList
 + addMedia()
@@ -72,17 +72,21 @@ class Series{
 
 }
 
-Media <|-- Movie
-Media <|-- Series
 
+Movie --|> Media
+Series --|> Media
 StreamingService *-- Media
 
 
+WatchList --|> MediaList
+MovieList --|> MediaList
+SeriesList --|> MediaList
+FinishedList --|> MediaList
 
 Main *-- StreamingService
-StreamingService *-- User
-StreamingService *-- List
-List *-- Media
+User --* StreamingService
+StreamingService *-- MediaList
+Media --* MediaList
 
 StreamingService *-- TextUI
 StreamingService *-- FileIO
